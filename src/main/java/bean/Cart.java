@@ -6,7 +6,6 @@ public class Cart {
 	private Integer cartId;
 	private Integer userId;
 	private List<CartItem> cartItems;
-	private double totalPrice;
 	public Integer getCartId() {
 		return cartId;
 	}
@@ -25,11 +24,4 @@ public class Cart {
 	public void setCartItems(List<CartItem> cartItems) {
 		this.cartItems = cartItems;
 	}
-	public double getTotalPrice() {
-		return totalPrice;
-	}
-	public void setTotalPrice(double totalPrice) {
-		this.totalPrice = totalPrice;
-	}
-	
 }

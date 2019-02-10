@@ -5,9 +5,11 @@ import java.util.List;
 public class Buy {
 	private Integer buyId;
 	private Integer userId;
-	private double totalPrice;
+	private String buyTime;
 	private String address;
-	private String orderTime;
+	private String phone;
+	private String name;
+	private String state;
 	private List<BuyItem> buyItems;
 	public Integer getBuyId() {
 		return buyId;
@@ -21,11 +23,11 @@ public class Buy {
 	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
-	public double getTotalPrice() {
-		return totalPrice;
+	public String getBuyTime() {
+		return buyTime;
 	}
-	public void setTotalPrice(double totalPrice) {
-		this.totalPrice = totalPrice;
+	public void setBuyTime(String buyTime) {
+		this.buyTime = buyTime;
 	}
 	public String getAddress() {
 		return address;
@@ -33,11 +35,23 @@ public class Buy {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getOrderTime() {
-		return orderTime;
+	public String getPhone() {
+		return phone;
 	}
-	public void setOrderTime(String orderTime) {
-		this.orderTime = orderTime;
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
 	}
 	public List<BuyItem> getBuyItems() {
 		return buyItems;

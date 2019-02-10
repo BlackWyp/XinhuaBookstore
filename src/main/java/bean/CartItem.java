@@ -4,7 +4,7 @@ public class CartItem {
 	private Integer cartId;
 	private Integer bookId;
 	private Integer number;
-	private double subtotal;//小计
+	private Book theBook;
 	public Integer getCartId() {
 		return cartId;
 	}
@@ -23,11 +23,10 @@ public class CartItem {
 	public void setNumber(Integer number) {
 		this.number = number;
 	}
-	public double getSubtotal() {
-		return subtotal;
+	public Book getTheBook() {
+		return theBook;
 	}
-	public void setSubtotal(double subtotal) {
-		this.subtotal = subtotal;
+	public void setTheBook(Book theBook) {
+		this.theBook = theBook;
 	}
-
 }

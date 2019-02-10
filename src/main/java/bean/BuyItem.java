@@ -4,7 +4,7 @@ public class BuyItem {
 	private Integer buyId;
 	private Integer bookId;
 	private Integer number;
-	private double subtotal;
+	private Book theBook;
 	public Integer getBuyId() {
 		return buyId;
 	}
@@ -23,10 +23,10 @@ public class BuyItem {
 	public void setNumber(Integer number) {
 		this.number = number;
 	}
-	public double getSubtotal() {
-		return subtotal;
+	public Book getTheBook() {
+		return theBook;
 	}
-	public void setSubtotal(double subtotal) {
-		this.subtotal = subtotal;
+	public void setTheBook(Book theBook) {
+		this.theBook = theBook;
 	}
 }
