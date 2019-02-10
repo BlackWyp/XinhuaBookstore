@@ -17,7 +17,7 @@ public class BookService {
 		return bookDao.getBooksByName(name);
 	}
 
-	public Book getBookById(Integer id) {
+	public List<Book> getBookById(Integer id) {
 		BookDao bookDao = new BookDao();
 		return bookDao.getBookById(id);
 	}

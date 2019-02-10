@@ -58,7 +58,8 @@ public class BookDao {
 		
 	}
 
-	public Book getBookById(Integer id) {
+	public List<Book> getBookById(Integer id) {
+		List<Book> books = new ArrayList<Book>();
 		Book book = null;
 		try {
 			DatabaseDao dao = new DatabaseDao();
@@ -73,12 +74,13 @@ public class BookDao {
 				book.setCategoryName(dao.getString("category_name"));
 				book.setIntroduction(dao.getString("introduction"));
 				book.setImgUrl(dao.getString("img_url"));
+				books.add(book);
 			}
 			dao.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return book;
+		return books;
 	}
 
 	public void deleteBookById(Integer id) {

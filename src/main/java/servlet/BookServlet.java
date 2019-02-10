@@ -25,7 +25,6 @@ public class BookServlet extends HttpServlet {
 		String type = request.getParameter("type");
 		BookService bookService = new BookService();
 		List<Book> books = null;
-		Book book = null;
 		String name = null;
 		String id = null;
 		Integer bookId = null;
@@ -51,8 +50,8 @@ public class BookServlet extends HttpServlet {
 				break;
 			case "getBookById":
 				id = request.getParameter("id");
-				book = bookService.getBookById(Integer.parseInt(id));
-				request.setAttribute("book", book);
+				books = bookService.getBookById(Integer.parseInt(id));
+				request.setAttribute("books", books);
 				getServletContext().getRequestDispatcher("xxx.jsp").forward(request, response);
 				break;
 
@@ -70,8 +69,8 @@ public class BookServlet extends HttpServlet {
 				break;
 			case "getBookByIdForManager":
 				id = request.getParameter("id");
-				book = bookService.getBookById(Integer.parseInt(id));
-				request.setAttribute("book", book);
+				books = bookService.getBookById(Integer.parseInt(id));
+				request.setAttribute("books", books);
 				getServletContext().getRequestDispatcher("xxx.jsp").forward(request, response);
 				break;
 			case "updateBook":

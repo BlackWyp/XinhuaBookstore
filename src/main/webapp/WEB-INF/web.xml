@@ -1,48 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-	id="WebApp_ID" version="3.1">
-	<display-name>XinhuaBookstore</display-name>
-	<servlet>
-		<description>初始化系统设置</description>
-		<servlet-name>InitServlet</servlet-name>
-		<servlet-class>servlet.InitServlet</servlet-class>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>XinhuaBookstore</display-name>
   <servlet>
-    <servlet-name>UserServlet</servlet-name>
-    <display-name>This is the display name of my J2EE component</display-name>
+    <description>初始化系统设置</description>
+    <servlet-name>InitServlet</servlet-name>
+    <servlet-class>servlet.InitServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
     <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserServlet</servlet-name>
     <servlet-class>servlet.UserServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>CartServlet</servlet-name>
-    <display-name>This is the display name of my J2EE component</display-name>
     <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CartServlet</servlet-name>
     <servlet-class>servlet.CartServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>BookServlet</servlet-name>
-    <display-name>This is the display name of my J2EE component</display-name>
     <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>BookServlet</servlet-name>
     <servlet-class>servlet.BookServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>BuyServlet</servlet-name>
-    <display-name>This is the display name of my J2EE component</display-name>
     <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>BuyServlet</servlet-name>
     <servlet-class>servlet.BuyServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>CategoryServlet</servlet-name>
+    <servlet-class>servlet.CategoryServlet</servlet-class>
+  </servlet>
 
-
-
-
-
-	<servlet-mapping>
-		<servlet-name>InitServlet</servlet-name>
-		<url-pattern>/servlet/InitServlet</url-pattern>
-	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InitServlet</servlet-name>
+    <url-pattern>/servlet/InitServlet</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/servlet/UserServlet</url-pattern>
@@ -59,12 +56,16 @@
     <servlet-name>BuyServlet</servlet-name>
     <url-pattern>/servlet/BuyServlet</url-pattern>
   </servlet-mapping>
-	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
-	</welcome-file-list>
+  <servlet-mapping>
+    <servlet-name>CategoryServlet</servlet-name>
+    <url-pattern>/servlet/CategoryServlet</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
 </web-app>
