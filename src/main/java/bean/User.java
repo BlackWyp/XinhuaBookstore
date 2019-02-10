@@ -7,6 +7,13 @@ public class User {
 	private String email;
 	private String phone;
 	private String role;
+	private String salt;
+	public String getSalt() {
+		return salt;
+	}
+	public void setSalt(String salt) {
+		this.salt = salt;
+	}
 	public Integer getUserId() {
 		return userId;
 	}
