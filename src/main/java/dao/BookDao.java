@@ -48,7 +48,7 @@ public class BookDao {
 				book.setCategoryName(dao.getString("category_name"));
 				book.setIntroduction(dao.getString("introduction"));
 				book.setImgUrl(dao.getString("img_url"));
-				books.add(book);
+				books.add(book);//试试
 			}
 			dao.close();
 		} catch (Exception e) {
