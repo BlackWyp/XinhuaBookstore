@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -64,7 +65,8 @@
             </tr>
             </thead>
             <tbody>
-                <tr class="text-c">
+            <c:forEach items="${requestScope.users}" var="news">
+            	<tr class="text-c">
                     <td><input type="checkbox" value="" name=""></td>
                     <td>1</td>
                     <td>black0403</td>
@@ -80,6 +82,7 @@
                                     class="Hui-iconfont">&#xe6e2;</i></a>
                     </td>
                 </tr>
+            </c:forEach>
             </tbody>
         </table>
     </div>

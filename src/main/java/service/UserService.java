@@ -1,5 +1,7 @@
 package service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import bean.User;
@@ -213,4 +215,20 @@ public class UserService {
 		return result;
 	
 	}
+	public List<User> getAllUsers(){
+		UserDao userDao=new UserDao();
+		DatabaseDao databaseDao = null;
+		try {
+			databaseDao = new DatabaseDao();
+			return userDao.getAllUsers(databaseDao);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			if(databaseDao!=null){
+				databaseDao.close();
+			}
+		}
+		return null;
+	} 
 }
