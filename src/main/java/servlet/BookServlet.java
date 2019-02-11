@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import bean.Book;
 import service.BookService;
+import service.CategoryService;
 
 public class BookServlet extends HttpServlet {
 
@@ -20,6 +21,8 @@ public class BookServlet extends HttpServlet {
 		doPost(request, response);
 	}
 
+	
+	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
@@ -84,6 +87,12 @@ public class BookServlet extends HttpServlet {
 			String introduction = request.getParameter("introduction");
 			double price = Double.parseDouble(request.getParameter("price"));
 			bookService.addBook(categoryName, bookName, imgUrl, caption, introduction, price);
+		}else if ("toAddBook".equals(type)) {
+			System.out.println("toAddBook");
+			CategoryService categoryService=new CategoryService();
+			List<String> categories=categoryService.getAllCategory();
+			request.setAttribute("categories", categories);
+			getServletContext().getRequestDispatcher("/admin/book/addABook.jsp").forward(request, response);
 		}
 	}
 

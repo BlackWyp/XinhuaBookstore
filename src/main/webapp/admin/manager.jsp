@@ -89,10 +89,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<dt><i class="Hui-iconfont">&#xe620;</i> 商品管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="product-add.php" data-title="添加商品" href="javascript:;">添加商品</a></li>
+					<li><a data-href="/XinhuaBookstore/servlet/BookServlet?type=toAddBook" data-title="添加商品" href="javascript:;">添加商品</a></li>
 					<li><a data-href="manager_goods_query.php" data-title="查询商品" href="javascript:void(0)">查看商品</a></li>
 					<li><a data-href="category-add.html" data-title="添加商品类别" href="javascript:;">添加商品类别</a></li>
 					<li><a data-href="manager_category_query.php" data-title="查看商品类别" href="javascript:;">查看商品类别</a></li>
+
+
 
 			</ul>
 		</dd>
