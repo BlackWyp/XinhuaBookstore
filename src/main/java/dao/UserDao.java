@@ -1,10 +1,28 @@
 package dao;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import bean.User;
 
 public class UserDao {
+	public List<User> getAllUsers(DatabaseDao databaseDao) throws SQLException{
+		List<User> users=new ArrayList<User>();
+		String sql="select * from user";
+		databaseDao.query(sql);
+		while(databaseDao.next()){
+			User user=new User();
+			user.setUserId(databaseDao.getInt("user_id"));
+			user.setUserName(databaseDao.getString("user_name"));
+			user.setEmail(databaseDao.getString("email"));
+			user.setPhone(databaseDao.getString("phone"));
+			user.setRole(databaseDao.getString("role"));
+			users.add(user);
+		}
+		return users;
+	}
+	
 	public User getUserByName(DatabaseDao databaseDao,String userName) throws SQLException{
 		User user=new User();
 		String sql="select * from user where user_name='"+userName+"'";
@@ -44,6 +62,5 @@ public class UserDao {
 			returnValue=true;
 		}
 		return returnValue;
-		
 	}
 }
