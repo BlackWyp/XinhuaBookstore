@@ -35,7 +35,6 @@
     <servlet-name>CategoryServlet</servlet-name>
     <servlet-class>servlet.CategoryServlet</servlet-class>
   </servlet>
-
   <servlet-mapping>
     <servlet-name>InitServlet</servlet-name>
     <url-pattern>/servlet/InitServlet</url-pattern>
