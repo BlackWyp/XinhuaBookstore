@@ -24,7 +24,7 @@ public class InitServlet extends HttpServlet {
 		super.init(conf);
 		try {
 			DatabaseDao dao=new DatabaseDao();
-			System.out.println("fuck");
+			System.out.println("正在初始化。。");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
