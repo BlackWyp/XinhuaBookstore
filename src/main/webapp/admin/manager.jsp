@@ -72,8 +72,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<dt><i class="Hui-iconfont">&#xe622;</i> 用户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="manager_user_query.php" data-title="查看用户" href="javascript:void(0)">查看用户</a></li>
-					<li><a data-href="manager_user_add.php" data-title="添加用户" href="javascript:void(0)">添加用户</a></li>
+					<li><a data-href="/XinhuaBookstore/admin/user/showAllUsers.jsp" data-title="查看用户" href="javascript:void(0)">查看用户</a></li>
+					<li><a data-href="/XinhuaBookstore/admin/user/addUser.jsp" data-title="添加用户" href="javascript:void(0)">添加用户</a></li>
 			    </ul>
 		</dd>
 	</dl>
