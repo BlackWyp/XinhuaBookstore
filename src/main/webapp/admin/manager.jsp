@@ -94,6 +94,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<li><a data-href="category-add.html" data-title="添加商品类别" href="javascript:;">添加商品类别</a></li>
 					<li><a data-href="manager_category_query.php" data-title="查看商品类别" href="javascript:;">查看商品类别</a></li>
 
+
+
 			</ul>
 		</dd>
 	</dl>

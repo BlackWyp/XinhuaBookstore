@@ -21,6 +21,8 @@ public class BookServlet extends HttpServlet {
 		doPost(request, response);
 	}
 
+	
+	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
