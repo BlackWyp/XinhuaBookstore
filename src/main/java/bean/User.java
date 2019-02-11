@@ -8,6 +8,13 @@ public class User {
 	private String phone;
 	private String role;
 	private String salt;
+	private String imgUrl;
+	public String getImgUrl() {
+		return imgUrl;
+	}
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
 	public String getSalt() {
 		return salt;
 	}
