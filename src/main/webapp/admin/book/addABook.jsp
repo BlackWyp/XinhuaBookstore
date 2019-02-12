@@ -48,7 +48,7 @@
 
 <body>
 	<article class="page-container">
-	<form id="MyForm" class="form form-horizontal" action="/XinhuaBookstore/servlet/BookServlet?type=addBook" method="post" enctype="multipart/form-data">
+	<form id="MyForm" name="MyForm" class="form form-horizontal" action="/XinhuaBookstore/servlet/BookServlet?type=addBook" method="post" enctype="multipart/form-data">
 	  <div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>类别：</label>
 			<div class="formControls col-xs-8 col-sm-9">
@@ -85,7 +85,7 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">价格：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="number" class="input-text" min="0" placeholder="" id="price" name="price">
+				<input type="text" class="input-text" placeholder="" id="price" name="price">
 			</div>
 		</div>
 	

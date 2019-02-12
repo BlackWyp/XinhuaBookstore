@@ -21,8 +21,6 @@ public class BookServlet extends HttpServlet {
 		doPost(request, response);
 	}
 
-	
-	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
@@ -47,7 +45,9 @@ public class BookServlet extends HttpServlet {
 			List<Book> books = bookService.getBookById(Integer.parseInt(id));
 			request.setAttribute("books", books);
 			getServletContext().getRequestDispatcher("xxx.jsp").forward(request, response);
-		} else if ("getAllBooksForManager".equals(type)) {
+		}
+		/* 后台 */
+		else if ("getAllBooksForManager".equals(type)) {
 			System.out.println("getAllBooksForManager");
 			List<Book> books = bookService.getAllBooks();
 			request.setAttribute("books", books);
@@ -82,15 +82,16 @@ public class BookServlet extends HttpServlet {
 			System.out.println("addBook");
 			String categoryName = request.getParameter("categoryName");
 			String bookName = request.getParameter("bookName");
-			String imgUrl = request.getParameter("imgUrl");
+			// String imgUrl = request.getParameter("imgUrl");
 			String caption = request.getParameter("caption");
 			String introduction = request.getParameter("introduction");
+			String temp=request.getParameter("price");
 			double price = Double.parseDouble(request.getParameter("price"));
-			bookService.addBook(categoryName, bookName, imgUrl, caption, introduction, price);
-		}else if ("toAddBook".equals(type)) {
+			bookService.addBook(categoryName, bookName, caption, introduction, price, request);
+		} else if ("toAddBook".equals(type)) {
 			System.out.println("toAddBook");
-			CategoryService categoryService=new CategoryService();
-			List<String> categories=categoryService.getAllCategory();
+			CategoryService categoryService = new CategoryService();
+			List<String> categories = categoryService.getAllCategory();
 			request.setAttribute("categories", categories);
 			getServletContext().getRequestDispatcher("/admin/book/addABook.jsp").forward(request, response);
 		}
