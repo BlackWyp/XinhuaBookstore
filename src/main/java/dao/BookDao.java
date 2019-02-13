@@ -48,14 +48,14 @@ public class BookDao {
 				book.setCategoryName(dao.getString("category_name"));
 				book.setIntroduction(dao.getString("introduction"));
 				book.setImgUrl(dao.getString("img_url"));
-				books.add(book);//试试
+				books.add(book);// 试试
 			}
 			dao.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return books;
-		
+
 	}
 
 	public List<Book> getBookById(Integer id) {
@@ -94,10 +94,8 @@ public class BookDao {
 		}
 	}
 
-	public void addBook(String categoryName, String bookName, String imgUrl, String caption, String introduction,
-			double price) {
-		String sql = "insert into book(book_name,price,category_name,caption,img_url,introduction) values('" + bookName
-				+ "','" + price + "','" + categoryName + "','" + caption + "','" + imgUrl + "','" + introduction + "')";
+	public void addBook(String categoryName, String bookName, String imgUrl, String caption, String introduction, double price) {
+		String sql = "insert into book(book_name,price,category_name,caption,img_url,introduction) values('" + bookName + "','" + price + "','" + categoryName + "','" + caption + "','" + imgUrl + "','" + introduction + "')";
 		try {
 			DatabaseDao dao = new DatabaseDao();
 			dao.update(sql);
@@ -107,11 +105,13 @@ public class BookDao {
 		}
 	}
 
-	public void updateBook(Integer id, String categoryName, String bookName, String imgUrl, String caption,
-			String introduction, double price) {
-		String sql = "update book set book_name='" + bookName + "',price='" + price + "',category_name='" + categoryName
-				+ "',caption='" + caption + "',img_url='" + imgUrl + "',introduction='" + introduction
-				+ "' where book_id=" + id.toString();
+	public void updateBook(Integer id, String categoryName, String bookName, String imgUrl, String caption, String introduction, double price) {
+		String sql = "";
+		if ("".equals(imgUrl) || imgUrl == null) {//不修改商品图片
+			sql = "update book set book_name='" + bookName + "',price='" + price + "',category_name='" + categoryName + "',caption='" + caption + "',introduction='" + introduction + "' where book_id=" + id.toString();
+		}else {//修改商品图片
+			sql = "update book set book_name='" + bookName + "',price='" + price + "',category_name='" + categoryName + "',caption='" + caption + "',img_url='" + imgUrl + "',introduction='" + introduction + "' where book_id=" + id.toString();
+		}
 		try {
 			DatabaseDao dao = new DatabaseDao();
 			dao.update(sql);

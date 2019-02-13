@@ -53,7 +53,8 @@
 
 <body>
 	<article class="page-container">
-	<form id="MyForm" name="MyForm" class="form form-horizontal" action="/XinhuaBookstore/servlet/BookServlet?type=addBook" method="post" enctype="multipart/form-data" onsubmit="return checkForm()">
+	<form id="MyForm" name="MyForm" class="form form-horizontal" action="/XinhuaBookstore/servlet/BookServlet?type=updateBook" method="post" enctype="multipart/form-data" onsubmit="return checkForm()">
+		<input type="hidden" id="bookId" name="bookId" value="${requestScope.book.bookId}">
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>类别：</label>
 			<div class="formControls col-xs-8 col-sm-9">
@@ -62,34 +63,37 @@
 						<option value="${category}">${category}</option>
 					</c:forEach>
 				</select>
+				
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>书名：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" placeholder="" id="bookName" name="bookName">
+				<input type="text" class="input-text" placeholder="" id="bookName" name="bookName" value="${requestScope.book.bookName}">
 			</div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>图片：</label>&nbsp;&nbsp; <input type="file" name="picture">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>图片：</label>&nbsp;&nbsp;<br> <img src="${requestScope.book.imgUrl}" style="width:200px;"/> <input type="file" name="picture">
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">简介：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" placeholder="" id="caption" name="caption">
+				<input type="text" value="${requestScope.book.caption}" class="input-text" placeholder="" id="caption" name="caption">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">详细介绍：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<script id="content" type="text/plain" style="width:800px;height:500px;"></script>
+				<script id="content" type="text/plain" style="width:800px;height:500px;">
+					${requestScope.book.introduction}
+				</script>
 			</div>
 		</div>
 
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>价格：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" placeholder="" id="price" name="price">
+				<input type="text" class="input-text" placeholder="" id="price" name="price" value="${requestScope.book.price}">
 			</div>
 		</div>
 

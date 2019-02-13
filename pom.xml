@@ -103,6 +103,6 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>news</finalName>
+		<finalName>XinhuaBookstore</finalName>
 	</build>
 </project>
