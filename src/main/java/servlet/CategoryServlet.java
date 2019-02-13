@@ -29,18 +29,28 @@ public class CategoryServlet extends HttpServlet {
 		} else if ("deleteCategory".equals(type)) {
 			String name = request.getParameter("name");
 			categoryService.deleteCategory(name);
+			response.sendRedirect("/XinhuaBookstore/servlet/CategoryServlet?type=getAllCategoryForManager");
 		} else if ("updateCategory".equals(type)) {
 			String newName = request.getParameter("newName");
 			String oldName = request.getParameter("oldName");
 			categoryService.updateCategory(oldName, newName);
+			response.sendRedirect("/XinhuaBookstore/servlet/CategoryServlet?type=getAllCategoryForManager");
 		} else if ("addCategory".equals(type)) {
 			String name = request.getParameter("name");
 			categoryService.addCategory(name);
+			response.sendRedirect("/XinhuaBookstore/servlet/CategoryServlet?type=getAllCategoryForManager");
 		} else if ("searchCategory".equals(type)) {
 			String name = request.getParameter("name");
 			List<String> categories = categoryService.searchCategory(name);
 			request.setAttribute("categories", categories);
 			getServletContext().getRequestDispatcher("xxx.jsp").forward(request, response);
+		}
+		
+		/*后台*/
+		else if("getAllCategoryForManager".equals(type)) {
+			List<String> categories = categoryService.getAllCategory();
+			request.setAttribute("categories", categories);
+			getServletContext().getRequestDispatcher("/admin/book/showAllCategories.jsp").forward(request, response);
 		}
 	}
 
