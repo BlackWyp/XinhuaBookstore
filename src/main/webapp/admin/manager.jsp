@@ -91,9 +91,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<ul>
 					<li><a data-href="/XinhuaBookstore/servlet/BookServlet?type=toAddBook" data-title="添加商品" href="javascript:;">添加商品</a></li>
 					<li><a data-href="/XinhuaBookstore/servlet/BookServlet?type=getAllBooksForManager" data-title="查询商品" href="javascript:void(0)">查看商品</a></li>
-					<li><a data-href="category-add.html" data-title="添加商品类别" href="javascript:;">添加商品类别</a></li>
 					<li><a data-href="/XinhuaBookstore/servlet/CategoryServlet?type=getAllCategoryForManager" data-title="查看商品类别" href="javascript:;">查看商品类别</a></li>
-
 
 			</ul>
 		</dd>
