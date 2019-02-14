@@ -73,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<dd>
 				<ul>
 					<li><a data-href="/XinhuaBookstore/servlet/UserServlet?type=getAllUsers" data-title="查看用户" href="javascript:void(0)">查看用户</a></li>
-					<li><a data-href="/XinhuaBookstore/admin/user/addUser.jsp" data-title="添加用户" href="javascript:void(0)">添加用户</a></li>
+					<li><a data-href="/XinhuaBookstore/admin/user/addAUser.jsp" data-title="添加用户" href="javascript:void(0)">添加用户</a></li>
 			    </ul>
 		</dd>
 	</dl>

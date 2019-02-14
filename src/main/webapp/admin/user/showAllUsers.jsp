@@ -48,6 +48,8 @@ td {
 					<th>邮箱</th>
 					<th>手机</th>
 					<th>用户类型</th>
+					<th>删除</th>
+					<th>修改</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -60,8 +62,8 @@ td {
 						<td>${user.email}</td>
 						<td>${user.phone}</td>
 						<td>${user.role}</td>
-						<td><a href="#">删除</a></td>
-						<td><a href="#">修改</a></td>
+						<td><a href="/XinhuaBookstore/servlet/UserServlet?type=deleteUserById&userId=${user.userId}">删除</a></td>
+						<td><a href="/XinhuaBookstore/servlet/UserServlet?type=getUserToUpdate&userId=${user.userId}">修改</a></td>
 					</tr>
 				</c:forEach>
 				
