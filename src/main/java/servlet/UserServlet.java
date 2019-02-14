@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import service.UserService;
+import tools.Tool;
 
 public class UserServlet extends HttpServlet {
 
@@ -41,11 +42,27 @@ public class UserServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
 		String type = request.getParameter("type");
+        UserService userService=new UserService();
 		if("getAllUsers".equals(type)){
-			UserService userService=new UserService();
 			request.setAttribute("users", userService.getAllUsers());
 			RequestDispatcher dispatcher =request.getRequestDispatcher("/admin/user/showAllUsers.jsp");
 			dispatcher .forward(request, response);
+		}
+		else if("deleteUserById".equals(type)){
+            userService.deleteUserById(Integer.parseInt(request.getParameter("userId")));
+            response.sendRedirect("/XinhuaBookstore/servlet/UserServlet?type=getAllUsers");
+        }
+		else if("getUserToUpdate".equals(type)){
+            request.setAttribute("user", userService.getUserById(Integer.parseInt(request.getParameter("userId"))));
+            RequestDispatcher dispatcher =request.getRequestDispatcher("/admin/user/updateUser.jsp");
+            dispatcher .forward(request, response);
+        }
+		else if("updateUser".equals(type)){
+            Integer result=userService.updateUserById(request);
+			Tool.returnIntResult(response,result);
+        }else if("addAUser".equals(type)){
+			Integer result=userService.addAUser(request);
+			Tool.returnIntResult(response,result);
 		}
 	}
 
