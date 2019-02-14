@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+
 import bean.Book;
 import service.BookService;
 import service.CategoryService;
@@ -31,14 +33,18 @@ public class BookServlet extends HttpServlet {
 		if ("getAllBooks".equals(type)) {
 			System.out.println("getAllBooks");
 			List<Book> books = bookService.getAllBooks();
-			request.setAttribute("books", books);
-			getServletContext().getRequestDispatcher("xxx.jsp").forward(request, response);
+			Gson gson = new Gson();
+			String booksJson=gson.toJson(books);//转换为json字符串再送回前台
+			request.setAttribute("books", booksJson);
+			getServletContext().getRequestDispatcher("/book/showAllBooks.jsp").forward(request, response);
 		} else if ("getBooksByName".equals(type)) {
 			System.out.println("getBooksByName");
 			String name = request.getParameter("name");
 			List<Book> books = bookService.getBooksByName(name);
-			request.setAttribute("books", books);
-			getServletContext().getRequestDispatcher("xxx.jsp").forward(request, response);
+			Gson gson = new Gson();
+			String booksJson=gson.toJson(books);//转换为json字符串再送回前台
+			request.setAttribute("books", booksJson);
+			getServletContext().getRequestDispatcher("/book/showAllBooks.jsp").forward(request, response);
 		} else if ("getBookById".equals(type)) {
 			System.out.println("getBookById");
 			String id = request.getParameter("id");

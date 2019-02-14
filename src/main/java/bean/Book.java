@@ -48,6 +48,7 @@ public class Book {
 		return price;
 	}
 	public void setPrice(double price) {
-		this.price = price;
+		String result = String.format("%.2f", price);
+		this.price = Double.parseDouble(result);
 	}
 }
