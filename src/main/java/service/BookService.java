@@ -41,7 +41,7 @@ public class BookService {
 
 	public void addBook(HttpServletRequest request) {
 		BookDao bookDao = new BookDao();
-		List<String> pList = new ArrayList<>();
+		List<String> pList = new ArrayList<String>();
 		String imgUrl = "";
 		// Create a factory for disk-based file items
 		DiskFileItemFactory factory = new DiskFileItemFactory();
@@ -91,7 +91,7 @@ public class BookService {
 
 	public void updateBook(HttpServletRequest request) {
 		BookDao bookDao = new BookDao();
-		List<String> pList = new ArrayList<>();
+		List<String> pList = new ArrayList<String>();
 		String imgUrl = "";
 		// Create a factory for disk-based file items
 		DiskFileItemFactory factory = new DiskFileItemFactory();
