@@ -41,10 +41,10 @@ public class UserServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
 		String type = request.getParameter("type");
-		if("getAllBooks".equals(type)){
+		if("getAllUsers".equals(type)){
 			UserService userService=new UserService();
 			request.setAttribute("users", userService.getAllUsers());
-			RequestDispatcher dispatcher =request.getRequestDispatcher("/admin/user/showAllUser.jsp");
+			RequestDispatcher dispatcher =request.getRequestDispatcher("/admin/user/showAllUsers.jsp");
 			dispatcher .forward(request, response);
 		}
 	}
