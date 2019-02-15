@@ -35,7 +35,11 @@
     <servlet-name>CategoryServlet</servlet-name>
     <servlet-class>servlet.CategoryServlet</servlet-class>
   </servlet>
-  <servlet-mapping>
+    <servlet>
+        <servlet-name>ImageCheckCodeServlet</servlet-name>
+        <servlet-class>servlet.ImageCheckCodeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
     <servlet-name>InitServlet</servlet-name>
     <url-pattern>/servlet/InitServlet</url-pattern>
   </servlet-mapping>
@@ -58,6 +62,10 @@
   <servlet-mapping>
     <servlet-name>CategoryServlet</servlet-name>
     <url-pattern>/servlet/CategoryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ImageCheckCodeServlet</servlet-name>
+    <url-pattern>/servlet/ImageCheckCodeServlet</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
